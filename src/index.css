@@ -1,0 +1,31 @@
+body {
+  font-family: 'Work Sans';
+  background-color: #ffcc00;
+}
+
+#Header {
+  text-align: center;
+}
+
+ul {
+  list-style-type: disc;
+}
+
+#Description {
+  width: 30%;
+  border: 2px ridge black;
+  padding: 8px;
+}
+
+#Modos {
+  border: 2px ridge black;
+  width: 30%;
+  padding: 8px;
+}
+
+.inline {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
