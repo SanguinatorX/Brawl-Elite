@@ -137,7 +137,7 @@ function App(props) {
         <ListeBots />
         <Activity />
       </div>
-      </>) : null}
+      </>) : (<></>)}
     </div>
   );
 }
