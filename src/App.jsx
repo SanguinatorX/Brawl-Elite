@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux";
 
-import { bug, anbug } from "./store.js";
+import { bug, anbug, cass, ancass } from "./store.js";
 
 function Header(props) {
   return <h1 id="Header">Bienvenue sur le site de Brawl d'Elite</h1>;
@@ -105,12 +105,20 @@ function ListeBots (props) {
 
 function Activity (props) {
   const bugge = useSelector((state) => state.bugge);
+  const casse = useSelector((state) => state.casse);
   const dispatch = useDispatch();
 
   return (
     <div id="Activity">
       <h3>Quelques activités pour ne pas s'ennuyer sur ce site !</h3>
-      <button>Casser le site</button><br />
+      <button onClick={() => {
+        // fait disparaître le site
+        dispatch(cass()); // casse = false
+        // après 2 secondes, on réaffiche
+        setTimeout(() => {
+          dispatch(ancass()); // casse = true
+        }, 1500);
+      }}>Casser le site</button><br />
       <button onClick={() => {
         // fait disparaître le site
         dispatch(bug()); // bugge = false
@@ -126,24 +134,37 @@ function Activity (props) {
 
 function App(props) {
   const bugge = useSelector((state) => state.bugge);
+  const casse = useSelector((state) => state.casse);
 
-  return (
-    <div id="app">
-      {bugge ? (<>
-      <Header />
-      <div className="inline">
-        <Description />
-        <Widget />
-      </div>
-      <br />
-      <div className="inline">
-        <Modos />
-        <ListeBots />
-        <Activity />
-      </div>
-      </>) : (<></>)}
-    </div>
-  );
+  switch (false) {
+    case bugge:
+      return(
+        <div id="app"></div>
+      );
+    break;
+    case casse:
+      return(
+        <div id="app"><h1>Wesh sale mec t'as cassé le site !!!!</h1></div>
+      );
+    break;
+    default:
+      return(
+        <div id="app">
+          <Header />
+          <div className="inline">
+            <Description />
+            <Widget />
+          </div>
+          <br />
+          <div className="inline">
+            <Modos />
+            <ListeBots />
+            <Activity />
+          </div>
+        </div>
+      );
+    break;
+  }
 }
 
 export default App;
