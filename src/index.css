@@ -85,3 +85,14 @@ button:disabled {
 .colorSplatsh * {
   animation: splatshAnimation 0.8s linear infinite;
 }
+
+#notFound {
+  text-align: center;
+}
+
+#tubes {
+  width: 500px;
+  height: 400px;
+  position: relative;
+  overflow: hidden;
+}
