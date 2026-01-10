@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import TubesCursor from "https://cdn.jsdelivr.net/npm/threejs-components@0.0.19/build/cursors/tubes1.min.js";
 
-export default function TubesComponent() {
+export default function Tubes() {
   const canvasRef = useRef(null);
   const appRef = useRef(null);
   const tubesRef = useRef(null);

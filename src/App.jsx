@@ -3,7 +3,10 @@ import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux";
 
 import { bug, anbug, cass, ancass, rotate, unrotate, splatsh, unsplatsh } from "./store.js";
-import TubesComponent from './tubes.jsx';
+
+import Tubes from './animations/tubes.jsx';
+import Bulles from "./animations/bulles.jsx";
+import Sparkler from "./animations/sparkler.jsx";
 
 function Header(props) {
   return <h1 id="Header">Bienvenue sur le site de Brawl d'Elite</h1>;
@@ -200,7 +203,11 @@ function App(props) {
                 <ListeBots />
                 <Activity />
               </div>
-              <TubesComponent />
+              <div id="animations">
+                <Tubes />
+                <Bulles />
+                <Sparkler />
+              </div>
             </ColorSplatshProvider>
           </Rotateprovider>
         </div>
