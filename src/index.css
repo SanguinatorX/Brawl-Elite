@@ -91,8 +91,11 @@ button:disabled {
 }
 
 #tubes {
-  width: 500px;
-  height: 400px;
+  width: 96%;
+  height: 250px;
+  margin: 5px;
+  border-radius: 4px;
+  box-shadow: 9px 7px 6px rgba(0,0,0,0.7);
   position: relative;
   overflow: hidden;
 }
