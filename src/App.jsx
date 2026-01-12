@@ -174,48 +174,54 @@ function ColorSplatshProvider (props) {
 }
 
 function App(props) {
+  const [presAnimation, modifPresAnimation] = useState(false);
+
   const bugge = useSelector((state) => state.bugge);
   const casse = useSelector((state) => state.casse);
 
-  switch (false) {
-    case bugge:
-      return(
-        <div id="appBugge"></div>
-      );
-    break;
-    case casse:
-      return(
-        <div id="appCasse"><h1>Wesh sale mec t'as cassé le site !!!!</h1></div>
-      );
-    break;
-    default:
-      return(
-        <div id="app">
-          <Rotateprovider>
-            <ColorSplatshProvider>
-              <Header />
-              <div className="inline">
-                <Description />
-                <Widget />
-              </div>
-              <br />
-              <div className="inline">
-                <Modos />
-                <ListeBots />
-                <Activity />
-              </div>
-              <div id="animations">
-                <Tubes />
-                <Bulles />
-                <Spheres />
-                <Sparkler />
-              </div>
-            </ColorSplatshProvider>
-          </Rotateprovider>
-        </div>
-      );
-    break;
+  if (!bugge) {
+    return <div id="appBugge"></div>;
   }
+
+  if (!casse) {
+    return <div id="appCasse"><h1>Wesh sale mec t'as cassé le site !!!!</h1></div>;
+  }
+
+  return (
+    <div id="app">
+      <Rotateprovider>
+        <ColorSplatshProvider>
+          <Header />
+          <br /><hr /><br />
+          <div className="inline">
+            <Description />
+            <Widget />
+          </div>
+          <br /><hr /><br />
+          <div className="inline">
+            <Modos />
+            <ListeBots />
+            <Activity />
+          </div>
+          <br /><hr /><br />
+          <h3>
+            Voir nos animations 3D : 
+            <button className="deroulator" onClick={() => modifPresAnimation(state => !state)}>
+              Voir
+            </button>
+          </h3>
+          { presAnimation &&
+            <div id="animations">
+              <Tubes />
+              <Bulles />
+              <Spheres />
+              <Sparkler />
+            </div>
+          }
+        </ColorSplatshProvider>
+      </Rotateprovider>
+    </div>
+  );
 }
 
 export default App;
