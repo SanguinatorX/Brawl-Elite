@@ -127,7 +127,7 @@ hr {
   text-align: center;
 }
 
-.tubes, .bulles, .sparkler, .spheres {
+#app .tubes, #app .bulles, #app .sparkler, #app .spheres {
   background: #b18d00;
   min-width: 24%;
   border-radius: 4px;
@@ -136,12 +136,12 @@ hr {
   transition: all 0.2s ease-out;
 }
 
-.tubes:hover, .bulles:hover, .sparkler:hover, .spheres:hover {
+#app .tubes:hover, #app .bulles:hover, #app .sparkler:hover, #app .spheres:hover {
   box-shadow: 12px 10px 10px rgba(0,0,0,0.8);
   transform: scale(1.1);
 }
 
-.tubes:active, .bulles:active, .sparkler:active, .spheres:active {
+#app .tubes:active, #app .bulles:active, #app .sparkler:active, #app .spheres:active {
   box-shadow: 6px 4px 4px rgba(0,0,0,0.6);
   transform: scale(1.05);
 }
@@ -222,4 +222,23 @@ aside ul li {
 /* Hover sur items */
 aside ul li:hover {
   background: rgba(0, 0, 0, 0.2);
+}
+
+#notFound {
+  background-color: black;
+  margin: 0;
+  padding: 0;
+}
+
+#notFound > *:not(.sparkler) {
+  color: white;
+  position: relative;
+  z-index: 2;
+}
+
+#notFound .sparkler {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
 }

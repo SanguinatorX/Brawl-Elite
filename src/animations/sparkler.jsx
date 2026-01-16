@@ -30,8 +30,8 @@ function Sparkler(props) {
   }
 
   return (
-    <div className="sparkler">
-      <button onClick={randomizeColors}>Changer de couleur</button>
+    <div className="sparkler" onClick={props.bouton ? null : randomizeColors}>
+      {props.bouton ? <button onClick={randomizeColors}>Changer de couleur</button> : null}
       <canvas ref={canvasRef}></canvas>
     </div>
   )

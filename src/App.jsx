@@ -238,10 +238,10 @@ function App(props) {
             </h3>
             { presAnimation &&
               <div id="animations">
-                <Tubes />
-                <Bulles />
-                <Spheres />
-                <Sparkler />
+                <Tubes bouton={true} />
+                <Bulles bouton={true} />
+                <Spheres bouton={true} />
+                <Sparkler bouton={true} />
               </div>
             }
           </main>

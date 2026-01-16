@@ -32,6 +32,8 @@ function Bulles(props) {
     }
   }
 
+  if (!props.bouton) {setPresencePluie(true);}
+
   return (
     <div className="bulles">
       <button onClick={toggleRain}>

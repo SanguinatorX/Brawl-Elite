@@ -42,13 +42,13 @@ function Spheres(props) {
   }
 
   return (
-    <div className="spheres">
-        <button onClick={toggleGravity}>
+    <div className="spheres" onClick={props.bouton ? null : randomColors}>
+        {props.bouton ? <button onClick={toggleGravity}>
           Toggle gravity
-        </button>
-        <button onClick={randomColors}>
+        </button> : null}
+        {props.bouton ? <button onClick={randomColors}>
           Random colors
-        </button>
+        </button> : null}
       <canvas id="canvas" ref={canvasRef}></canvas>
     </div>
   )
