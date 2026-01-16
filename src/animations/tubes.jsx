@@ -41,7 +41,7 @@ function Tubes(props) {
   }
 
   return (
-    <div id="tubes">
+    <div className="tubes">
       <button onClick={changeColors}>Changer de couleur</button>
       <canvas ref={canvasRef}></canvas>
     </div>

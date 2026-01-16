@@ -33,7 +33,7 @@ function Bulles(props) {
   }
 
   return (
-    <div id="bulles">
+    <div className="bulles">
       <button onClick={toggleRain}>
         {presencePluie ? "Désactiver la pluie" : "Activer la pluie"}
       </button>

@@ -25,6 +25,8 @@
 body {
   font-family: 'Work Sans';
   background-color: #ffcc00;
+  padding: 0;
+  margin: 0;
   overflow-x: hidden;
 }
 
@@ -123,7 +125,7 @@ hr {
   text-align: center;
 }
 
-#tubes, #bulles, #sparkler, #spheres {
+.tubes, .bulles, .sparkler, .spheres {
   background: #b18d00;
   min-width: 24%;
   border-radius: 4px;
@@ -132,12 +134,12 @@ hr {
   transition: all 0.2s ease-out;
 }
 
-#tubes:hover, #bulles:hover, #sparkler:hover, #spheres:hover {
+.tubes:hover, .bulles:hover, .sparkler:hover, .spheres:hover {
   box-shadow: 12px 10px 10px rgba(0,0,0,0.8);
   transform: scale(1.1);
 }
 
-#tubes:active, #bulles:active, #sparkler:active, #spheres:active {
+.tubes:active, .bulles:active, .sparkler:active, .spheres:active {
   box-shadow: 6px 4px 4px rgba(0,0,0,0.6);
   transform: scale(1.05);
 }

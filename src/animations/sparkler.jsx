@@ -30,7 +30,7 @@ function Sparkler(props) {
   }
 
   return (
-    <div id="sparkler">
+    <div className="sparkler">
       <button onClick={randomizeColors}>Changer de couleur</button>
       <canvas ref={canvasRef}></canvas>
     </div>
