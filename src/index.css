@@ -246,3 +246,10 @@ aside ul li:hover {
   justify-content: center;
   align-items: center;
 }
+
+.footer-text {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  text-align: center;
+}
