@@ -31,21 +31,21 @@ html, body {
 }
 
 header {
-  margin: 20px 110px;
-  padding: 12px 20px;
-  border-radius: 12px;
+  margin: 30px 110px;
+  padding: 16px 20px;
+  border-radius: 16px;
 
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 20px;
-  overflow: hidden;
+  gap: 30px;
 
-  background: rgba(255, 204, 0, 0.15);
-  backdrop-filter: blur(8px);
+  background: rgba(255, 204, 0, 0.18);
+  backdrop-filter: blur(10px);
+
   color: #ffcc00;
-  border: 1px solid rgba(255, 204, 0, 0.3);
-  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+  border: 1px solid rgba(255, 204, 0, 0.35);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.5);
 }
 
 header::before {
@@ -58,12 +58,13 @@ header::before {
 
 header h1 {
   margin: 0;
-  font-size: 24px;
-  text-align: center;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: 1px;
 }
 
 header img {
-  width: 50px;
+  width: 65px;
   height: auto;
   opacity: 0.9;
   transition: transform 0.2s ease;
