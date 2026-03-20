@@ -24,16 +24,20 @@
 
 html, body {
   font-family: 'Work Sans';
-  background-color: #ffcc00;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  color: #e2e8f0;
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
 }
 
 header {
-  margin: 12px;
+  margin: 20px;
   text-align: center;
-  border: 2px solid black;
+  padding: 20px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #6366f1, #22c55e);
+  color: white;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.5);
 }
 
 ul {
@@ -42,9 +46,17 @@ ul {
 
 section {
   width: 30%;
-  border: 2px ridge black;
-  padding: 8px;
-  background-color: #ffcc00;
+  padding: 16px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.1); /*nan mec le jaune est la couleur clé du site, je le veux de retour, car le logo du serveur est jaune*/
+  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+  transition: transform 0.2s ease;
+}
+
+section:hover {
+  transform: translateY(-5px);
 }
 
 button:not(.deroulator) {
