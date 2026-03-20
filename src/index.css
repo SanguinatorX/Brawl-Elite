@@ -24,20 +24,25 @@
 
 html, body {
   font-family: 'Work Sans';
-  background: linear-gradient(135deg, #0f172a, #1e293b);
+  background: radial-gradient(circle at top, #1e293b, #020617);
   color: #e2e8f0;
   margin: 0;
   padding: 0;
 }
 
 header {
-  margin: 20px;
-  text-align: center;
-  padding: 20px;
+  margin: 20px 110px;
+  padding: 12px 20px;
   border-radius: 12px;
-  background: linear-gradient(135deg, #6366f1, #22c55e);
-  color: white;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+  text-align: center;
+  background: rgba(255, 204, 0, 0.15); /* jaune léger */
+  backdrop-filter: blur(8px);
+  color: #ffcc00;
+  border: 1px solid rgba(255, 204, 0, 0.3);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
 }
 
 ul {
@@ -48,11 +53,10 @@ section {
   width: 30%;
   padding: 16px;
   border-radius: 12px;
-  background: rgba(255,255,255,0.05);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255,255,255,0.1); /*nan mec le jaune est la couleur clé du site, je le veux de retour, car le logo du serveur est jaune*/
+  background: linear-gradient(135deg, #ffcc00, #e6b800);
+  color: #1e293b;
+  border: 1px solid rgba(0,0,0,0.2);
   box-shadow: 0 8px 25px rgba(0,0,0,0.4);
-  transition: transform 0.2s ease;
 }
 
 section:hover {
@@ -231,7 +235,7 @@ aside ul li {
 
 /* Hover sur items */
 aside ul li:hover {
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(255, 204, 0, 0.2);
 }
 
 #notFound {

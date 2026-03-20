@@ -15,7 +15,7 @@ import Spheres from "./animations/spheres.jsx";
 function Header(props) {
   return (
     <header>
-      <h1>Bienvenue sur le site de Brawl d'Elite</h1>
+      <img width="80" src="/trident-elite.png" /><h1>Bienvenue sur le site de Brawl d'Elite</h1><img width="80" src="/trident-elite.png" />
     </header>
   );
 }
