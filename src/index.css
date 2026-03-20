@@ -76,6 +76,7 @@ button:not(.deroulator) {
 button:not(.deroulator):hover {
   filter: brightness(1.1);
   transform: translateY(-2px);
+  transform: scale(1.05);
 }
 
 button:not(.deroulator):active {
@@ -196,9 +197,10 @@ aside.cache, aside.affiche {
   width: 250px;
   height: 100vh;
   padding: 10px;
-  background: white;
-  color: black; /* couleur par défaut */
   font-size: 1.1em;
+  background: #0f172a;
+  color: white;
+  border-right: 1px solid rgba(255,255,255,0.1);
   transition: transform 0.3s ease-in-out;
   transform: translateX(-100%);
 }
@@ -264,4 +266,21 @@ aside ul li:hover {
   bottom: 0px;
   width: 100%;
   text-align: center;
+}
+
+@media (max-width: 900px) {
+  .inline {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  section {
+    width: 90%;
+  }
+
+  #animations {
+    flex-direction: column;
+    height: auto;
+    gap: 10px;
+  }
 }
