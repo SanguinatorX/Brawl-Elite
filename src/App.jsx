@@ -12,6 +12,13 @@ import Bulles from "./animations/bulles.jsx";
 import Sparkler from "./animations/sparkler.jsx";
 import Spheres from "./animations/spheres.jsx";
 
+const actions = [
+  { text: "Casser le site", action: cass, undo: ancass },
+  { text: "Bugger le site", action: bug, undo: anbug },
+  { text: "Flipper le site", action: rotate, undo: unrotate, time: 3000 },
+  { text: "Color splatsh", action: splatsh, undo: unsplatsh }
+];
+
 function Header(props) {
   return (
     <header>
@@ -77,8 +84,7 @@ function Widget(props) {
     <article>
       <iframe
         src="https://discord.com/widget?id=1297945538679017472&theme=dark"
-        width="600"
-        height="440"
+        style={{ width: "100%", height: "400px", border: "none" }}
         allowtransparency="true"
         sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
       ></iframe>
@@ -135,51 +141,23 @@ function ListeBots (props) {
   );
 }
 
-function Activity (props) {
-  const timeCasse = 2500;
+function Activity() {
   const dispatch = useDispatch();
 
   return (
     <section>
-      <h3>Quelques activités pour ne pas s'ennuyer sur ce site !</h3>
-      <button onClick={() => {
-        // fait disparaître le site
-        dispatch(cass()); // casse = false
-        // après 2 secondes, on réaffiche
-        setTimeout(() => {
-          dispatch(ancass()); // casse = true
-        }, timeCasse);
-      }}>Casser le site</button>
-      <br />
+      <h3>Quelques activités</h3>
 
-      <button onClick={() => {
-        // fait disparaître le site
-        dispatch(bug()); // bugge = false
-        // après 2 secondes, on réaffiche
-        setTimeout(() => {
-          dispatch(anbug()); // bugge = true
-        }, timeCasse);
-      }}>Bugger le site</button>
-      <br />
-
-      <button onClick={() => {
-        // fait disparaître le site
-        dispatch(rotate()); // rotate = true
-        // après 2 secondes, on réaffiche
-        setTimeout(() => {
-          dispatch(unrotate()); // rotate = false
-        }, 3000);
-      }}>Flipper le site</button>
-      <br />
-
-      <button onClick={() => {
-        // fait disparaître le site
-        dispatch(splatsh()); // splatsh = true
-        // après 2 secondes, on réaffiche
-        setTimeout(() => {
-          dispatch(unsplatsh()); // splatsh = false
-        }, 2500);
-      }}>Color splatsh</button>
+      {actions.map((btn, i) => (
+        <button key={i} onClick={() => {
+          dispatch(btn.action());
+          setTimeout(() => {
+            dispatch(btn.undo());
+          }, btn.time || 2500);
+        }}>
+          {btn.text}
+        </button>
+      ))}
     </section>
   );
 }
