@@ -5,14 +5,14 @@ export default function Profile() {
   const [profile, setProfile] = useState(null);
   const [error, setError] = useState(null);
 
-  const fetchPlayer = () => {
+  const getPlayer = () => {
     if (!tag) return;
 
-    const cleanTag = tag.replace("#", "").toUpperCase();
+    const cleanedTag = tag.replace("#", "").toUpperCase();
 
-    fetch(`http://localhost:3000/player/${cleanTag}`)
+    fetch(`http://localhost:3000/player/${cleanedTag}`)
       .then(res => {
-        if (!res.ok) throw new Error("Joueur introuvable");
+        if (!res.ok) throw new Error();
         return res.json();
       })
       .then(data => {
@@ -21,31 +21,49 @@ export default function Profile() {
       })
       .catch(() => {
         setProfile(null);
-        setError("Tag invalide ou joueur introuvable");
+        setError("Impossible de trouver ce joueur 💀, vérifiez que vous avez tapé le bon tag");
       });
   };
 
   return (
-    <div id="profile">
-      <h1>Votre profil Brawl Stars</h1>
+    <div className="profile">
+      <div className="profileCard">
+        <h1>Profil Brawl Stars</h1>
+        <p className="soustitre">Entre ton tag et vois tes stats</p>
+        <input
+          type="text"
+          placeholder="Exemple : #ABC123"
+          onChange={(e) => setTag(e.target.value)}
+        />
+        <button onClick={getPlayer}>Rechercher le joueur</button>
 
-      <input
-        type="text"
-        placeholder="Votre tag Brawl Stars"
-        onChange={(e) => setTag(e.target.value)}
-      />
+        {error ? <p className="error">{error}</p> : null}
+      </div>
+      {profile ? (
+        <div className="profileResult">
+            <h2 style={{ color: profile.nameColor }}>
+                <img
+                    src={`https://cdn.brawlify.com/brawlers/borders/${profile.icon.id}.png`}
+                    alt="icon"
+                    className="profileIcon"
+                />
+                {profile.name}
+            </h2>
 
-      <button onClick={fetchPlayer}>Trouver le joueur</button>
+          <div className="stats">
+            <div className="statBox">
+              <span>🏷️ Tag</span>
+              <p>{profile.tag}</p>
+            </div>
 
-      {error && <p style={{ color: "red" }}>{error}</p>}
-
-      {profile && (
-        <div>
-          <h2>{profile.name}</h2>
-          <p>Tag: {profile.tag}</p>
-          <p>Trophées: {profile.trophies}</p>
+            <div className="statBox">
+              <span>🏆 Trophées</span>
+              <p>{profile.trophies}</p>
+            </div>
+          </div>
         </div>
-      )}
+      ) : null}
+
     </div>
   );
 }
