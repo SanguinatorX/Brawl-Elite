@@ -29,7 +29,8 @@ export default function Profile() {
     <div className="profile">
       <div className="profileCard">
         <h1>Profil Brawl Stars</h1>
-        <p className="soustitre">Entre ton tag et vois tes stats</p>
+        <p className="sous-titre">Entre ton tag et vois tes stats</p>
+        <p className="sous-titre">Qu'est-ce qu'un tag ? <a href="https://discord.gg/3aBCbsgc5Z" target="_blank">Rejoins le serveur</a> pour poser la question aux membres !</p>
         <input
           type="text"
           placeholder="Exemple : #ABC123"
@@ -63,7 +64,6 @@ export default function Profile() {
           </div>
         </div>
       ) : null}
-
     </div>
   );
 }

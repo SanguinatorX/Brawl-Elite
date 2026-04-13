@@ -317,7 +317,7 @@ aside ul li:hover {
   color: #ffcc00;
 }
 
-.soustitre {
+.sous-titre {
   font-size: 14px;
   opacity: 0.7;
   margin-bottom: 20px;
@@ -325,13 +325,34 @@ aside ul li:hover {
 
 .profileCard input {
   width: 90%;
-  padding: 8px 4px;
-  border-radius: 7px;
-  border: none;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
   outline: none;
-  margin-bottom: 10px;
-  text-align: center;
-  font-weight: bold;
+  margin-bottom: 12px;
+  text-align: left;
+  font-size: 14px;
+
+  background: rgba(255, 255, 255, 0.05);
+  color: #e2e8f0;
+
+  transition: border 0.2s ease, background 0.2s ease;
+}
+
+.profileCard input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* focus clean */
+.profileCard input:focus {
+  border: 1px solid #60a5fa;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* petit hover discret */
+.profileCard input:hover {
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  filter: brightness(1.1);
 }
 
 .profileCard button {
