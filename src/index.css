@@ -74,6 +74,21 @@ header img:hover {
   transform: scale(1.1);
 }
 
+.Link {
+  color: #60a5fa;
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+.Link:hover {
+  color: #3b82f6;
+}
+.Link:active {
+  color: #0c2abc;
+}
+.Link:visited {
+  color: #1bb6f8;
+}
+
 ul {
   list-style-type: disc;
 }
@@ -384,12 +399,14 @@ aside ul li:hover {
 .stats {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   margin-top: 15px;
 }
 
 .statBox {
   flex: 1;
-  margin: 0 5px;
+  min-width: 40%;
+  margin: 5px;
   padding: 6px;
   border-radius: 12px;
   background: rgba(255,255,255,0.05);

@@ -43,11 +43,11 @@ export default function Profile() {
       {profile ? (
         <div className="profileResult">
             <h2 style={{ color: profile.nameColor }}>
-                <img
+                {/* <img
                     src={`https://cdn.brawlify.com/brawlers/borders/${profile.icon.id}.png`}
                     alt="icon"
                     className="profileIcon"
-                />
+                /> */}
                 {profile.name}
             </h2>
 
@@ -55,6 +55,16 @@ export default function Profile() {
             <div className="statBox">
               <span>🏷️ Tag</span>
               <p>{profile.tag}</p>
+            </div>
+
+            <div className="statBox">
+              <span>✌️ Victoires solo</span>
+              <p>{profile.soloVictories}</p>
+            </div>
+
+            <div className="statBox">
+              <span>🧑‍🤝‍🧑 Club</span>
+              <p>{profile.club ? profile.club.name : "Pas dans un club"}</p>
             </div>
 
             <div className="statBox">

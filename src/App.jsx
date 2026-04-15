@@ -40,9 +40,9 @@ function LateralMenu (props) {
         <h2>Menu</h2>
         <ul>
           <li onClick={() => { modifMenuAffichage(false) }}><FontAwesomeIcon icon={faGear} /> Settings</li>
-          <li><Link to="/profile"><FontAwesomeIcon icon={faAddressCard} /> Votre profil <abbr title="Brawl Stars">BS</abbr></Link></li>
+          <li><Link className="Link" to="/profile"><FontAwesomeIcon icon={faAddressCard} /> Votre profil <abbr title="Brawl Stars">BS</abbr></Link></li>
           <li><a href="mailto:eragonlorvin@outlook.com?subject=Bug%20Report&body=Bonjour,%0A%0AJ'ai%20trouvé%20un%20bug%20sur%20le%20site%20%22Portfolio%20Dragen%202025%22.">Report a bug</a></li>
-          <li><Link to="/feedback"><FontAwesomeIcon icon={faComment} /> Give FeedBack</Link></li>
+          <li><Link className="Link" to="/feedback"><FontAwesomeIcon icon={faComment} /> Give FeedBack</Link></li>
           <li>Contacts</li>
           <li>Actu hebdo</li>
         </ul>
