@@ -1,0 +1,84 @@
+
+@keyframes rotateAnimation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes splatshAnimation {
+  0% {
+    background-color: red;
+  }
+  25% {
+    background-color: rgb(0, 200, 255);
+  }
+  75% {
+    background-color: rgb(0, 255, 17);
+  }
+  100% {
+    background-color: blue;
+  }
+}
+
+html, body {
+  font-family: 'Work Sans';
+  background: radial-gradient(circle at top, #1e293b, #020617);
+  color: #e2e8f0;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+button:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+hr {
+  height: 1px;
+  width: 90%;  /* épaisseur de la ligne */
+  background-color: blue; /* couleur que tu veux */
+}
+
+.inline {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.Link {
+  color: #60a5fa;
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+.Link:hover {
+  color: #3b82f6;
+}
+.Link:active {
+  color: #0c2abc;
+}
+.Link:visited {
+  color: #1bb6f8;
+}
+
+ul {
+  list-style-type: disc;
+}
+
+@media (max-width: 900px) {
+  .inline {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #animations {
+    flex-direction: column;
+    height: auto;
+    gap: 10px;
+  }
+}
