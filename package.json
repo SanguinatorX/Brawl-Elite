@@ -1,7 +1,7 @@
 {
   "name": "vite-react-starter",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -36,9 +36,9 @@
     "globals": "^16.4.0",
     "vite": "^7.1.7"
   },
-  "description": "The website for a discord server !",
+  "description": "The website for a discord server about a video game called Brawl Stars !",
   "main": "vite.config.js",
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "keywords": ["discord", "website", "react", "vite"],
+  "author": "SanguinatorX",
+  "license": "MPL-2.0"
 }
