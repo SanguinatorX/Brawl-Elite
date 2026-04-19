@@ -29,6 +29,7 @@
     "@types/react": "^19.1.16",
     "@types/react-dom": "^19.1.9",
     "@vitejs/plugin-react": "^5.0.4",
+    "babel-plugin-react-compiler": "^1.0.0",
     "baseline-browser-mapping": "^2.9.6",
     "eslint": "^9.36.0",
     "eslint-plugin-react-hooks": "^5.2.0",
@@ -38,7 +39,12 @@
   },
   "description": "The website for a discord server about a video game called Brawl Stars !",
   "main": "vite.config.js",
-  "keywords": ["discord", "website", "react", "vite"],
+  "keywords": [
+    "discord",
+    "website",
+    "react",
+    "vite"
+  ],
   "author": "SanguinatorX",
   "license": "MPL-2.0"
 }
