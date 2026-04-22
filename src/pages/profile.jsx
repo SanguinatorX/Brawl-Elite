@@ -1,6 +1,7 @@
 import React, { useState } from "react";
+import { GoHome } from "./globalCompos.jsx";
 
-export default function Profile() {
+function Profile() {
   const [tag, setTag] = useState("");
   const [profile, setProfile] = useState(null);
   const [error, setError] = useState(null);
@@ -74,6 +75,15 @@ export default function Profile() {
           </div>
         </div>
       ) : null}
+    </div>
+  );
+}
+
+export default function ProfilePage() {
+  return (
+    <div className="profilePage">
+      <GoHome />
+      <Profile />
     </div>
   );
 }
