@@ -124,19 +124,29 @@ function Modos(props) {
   );
 }
 
-function ListeBots (props) {
+function ListeBots(props) {
   return (
     <section>
       <h3>
         Et voici les esclaves du serveur Brawl d'Elite les bots !
       </h3>
       <ul>
+        <li>Botify</li>
         <li>Brawl Bot</li>
-        <li>DraftBot</li>
+        <li>BrawlTools</li>
+        <li>Carl-bot</li>
         <li>CoinsBot®</li>
+        <li>Counting</li>
+        <li>DISBOARD</li>
+        <li>Discadia</li>
+        <li>DraftBot</li>
+        <li>Emoji.gg</li>
         <li>InviteLogger</li>
-        <li>Carl Bot</li>
+        <li>Pingcord</li>
+        <li>Statbot</li>
         <li>Ticket Tool</li>
+        <li>UnbelievaBoat</li>
+        <li>SquadUp</li>
       </ul>
     </section>
   );
