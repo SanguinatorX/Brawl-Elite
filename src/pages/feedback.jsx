@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { GoHome } from "./globalCompos.jsx";
+import { GoHome } from "/src/globalCompos.jsx";
 
 export default function Feedback(props) {
     return (
