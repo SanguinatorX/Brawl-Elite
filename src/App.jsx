@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -39,7 +39,7 @@ function LateralMenu (props) {
       <aside className={menuAffichage ? "affiche" : "cache"}>
         <h2>Menu</h2>
         <ul>
-          <li onClick={() => { modifMenuAffichage(false) }}><FontAwesomeIcon icon={faGear} /> Settings</li>
+          <li onClick={() => { modifMenuAffichage(false) }}><Link to="/settings"><FontAwesomeIcon icon={faGear} /> Settings</Link></li>
           <li><Link className="Link" to="/profile"><FontAwesomeIcon icon={faAddressCard} /> Votre profil <abbr title="Brawl Stars">BS</abbr></Link></li>
           <li onClick={() => { modifMenuAffichage(false) }}><a href="mailto:eragonlorvin@outlook.com?subject=Bug%20Report&body=Bonjour,%0A%0AJ'ai%20trouvé%20un%20bug%20sur%20le%20site%20%22Portfolio%20Dragen%202025%22.">Report a bug</a></li>
           <li><Link className="Link" to="/feedback"><FontAwesomeIcon icon={faComment} /> Give FeedBack</Link></li>
@@ -234,6 +234,7 @@ function App(props) {
               </div>
             }
           </main>
+          <Outlet />
         </ColorSplatshProvider>
       </Rotateprovider>
     </div>

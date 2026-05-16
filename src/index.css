@@ -397,6 +397,36 @@ aside ul li:hover {
     transform: scale(1.1);
 }
 
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modalBox {
+  background: #111;
+  padding: 20px;
+  border-radius: 12px;
+  width: 400px;
+  color: white;
+}
+
+.closeBtn {
+  font-size: 32px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: white;
+  text-decoration: none;
+}
+
 .footer-text {
   position: fixed;
   bottom: 0px;
