@@ -428,6 +428,50 @@ aside ul li:hover {
   text-decoration: none;
 }
 
+.slider {
+  appearance: none;
+  width: 240px;
+  height: 6px;
+  border-radius: 600px;
+  outline: none;
+  background: linear-gradient(90deg, #00ffcc, #7c4dff, #ff2bd6);
+  box-shadow: 0 0 12px rgba(0,255,204,0.25);
+  cursor: pointer;
+}
+
+/* Thumb Chrome */
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #0f0f0f;
+  border: 2px solid #00ffcc;
+  box-shadow: 0 0 7px #00ffcc, 0 0 25px #7c4dff;
+  transition: transform 0.15s ease;
+}
+
+.slider::-webkit-slider-thumb:hover {
+  transform: scale(1.1);
+}
+
+/* Firefox */
+.slider::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #0f0f0f;
+  border: 2px solid #00ffcc;
+  box-shadow: 0 0 7px #00ffcc, 0 0 25px #7c4dff;
+}
+
+/* Firefox track */
+.slider::-moz-range-track {
+  height: 6px;
+  border-radius: 600px;
+  background: transparent;
+}
+
 .footer-text {
   position: fixed;
   bottom: 0px;

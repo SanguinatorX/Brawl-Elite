@@ -70,6 +70,10 @@
     list-style-type: disc;
   }
 
+  input {
+    margin: 15px 0;
+  }
+
   @media (max-width: 900px) {
     .inline {
       flex-direction: column;
