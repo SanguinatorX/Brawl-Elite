@@ -555,6 +555,45 @@ legend {
   border: none;
 }
 
+/* Étape 1 — opt-in obligatoire */
+select {
+  appearance: base-select;
+  margin: 10px 0;
+  width: 120px;
+  height: 30px;
+}
+
+select:hover {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  filter: brightness(1.1);
+}
+
+/* Le dropdown */
+select::picker(select) {
+  background: white;
+  color: black;
+  border: 1.5px solid #000000;
+  border-radius: 20px;
+  padding: 6px;
+}
+
+/* Chaque option sélectionnée */
+select option:checked {
+  background: lightblue;
+  color: black;
+}
+
+/* La coche ✓ */
+select option::checkmark {
+  content: "✓";
+  color: black;
+}
+
+/* La flèche du bouton */
+select::picker-icon {
+  content: "▾";
+}
+
 .footer-text {
   position: fixed;
   bottom: 0px;

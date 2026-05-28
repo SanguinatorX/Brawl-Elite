@@ -24,7 +24,7 @@ function Settings () {
           <legend>Taille</legend>
           <label htmlFor="textSize">Taille du texte :</label>
           <br />
-          <input type="range" min="8" max="25" id="textSize" defaultValue={textSize} className="slider" ref={rangeRef}
+          <input type="range" min="8" max="25" id="textSize" className="slider" defaultValue={textSize} ref={rangeRef}
           />
         </fieldset>
         <hr width="100%" />
@@ -51,7 +51,7 @@ function Settings () {
         <hr width="100%" />
         <fieldset>
           <input type="submit" value="Enregistrer les modifications" className="submitBtn" onClick={() => {
-            dispatch(textSizer(number(rangeRef.current.value)));
+            dispatch(textSizer(Number(rangeRef.current.value)));
             dispatch(textColorer(coloratorRef.current.value));
           }} />
         </fieldset>
