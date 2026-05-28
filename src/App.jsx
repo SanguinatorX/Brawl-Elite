@@ -41,7 +41,7 @@ function LateralMenu (props) {
         <ul>
           <Link to="/settings" className="Link"><li onClick={() => { modifMenuAffichage(false) }}><FontAwesomeIcon icon={faGear} /> Settings</li></Link>
           <Link to="/profile" className="Link"><li onClick={() => { modifMenuAffichage(false) }}><FontAwesomeIcon icon={faAddressCard} /> Votre profil <abbr title="Brawl Stars">BS</abbr></li></Link>
-          <Link to="mailto:support@exemple.com?subject=Reporter%20un%20bug&body=Bonjour,%0D%0A%0D%0AJe%20souhaite%20signaler%20un%20bug%20:%0D%0A%0D%0A-%20Description%20du%20probl%C3%A8me%20:%0D%0A-%20%C3%89tapes%20pour%20le%20reproduire%20:%0D%0A-%20R%C3%A9sultat%20attendu%20:%0D%0A-%20Capture%20d%E2%80%99%C3%A9cran%20(si%20possible)%20:%0D%0A%0D%0AMerci." className="Link"><li onClick={() => { modifMenuAffichage(false) }}><FontAwesomeIcon icon={faExclamationTriangle} /> Report a bug</li></Link>
+          <Link to="mailto:romangurin01@gmail.com?subject=Reporter%20un%20bug&body=Bonjour,%0D%0A%0D%0AJe%20souhaite%20signaler%20un%20bug%20:%0D%0A%0D%0A-%20Description%20du%20probl%C3%A8me%20:%0D%0A-%20%C3%89tapes%20pour%20le%20reproduire%20:%0D%0A-%20R%C3%A9sultat%20attendu%20:%0D%0A-%20Capture%20d%E2%80%99%C3%A9cran%20(si%20possible)%20:%0D%0A%0D%0AMerci." className="Link"><li onClick={() => { modifMenuAffichage(false) }}><FontAwesomeIcon icon={faExclamationTriangle} /> Report a bug</li></Link>
           <Link to="/feedback" className="Link"><li onClick={() => { modifMenuAffichage(false) }}><FontAwesomeIcon icon={faComment} /> Give FeedBack</li></Link>
           <li>Contacts</li>
           <li>Actu hebdo</li>
