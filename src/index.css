@@ -505,12 +505,21 @@ legend {
   margin: 10px 0;
   width: 80px;
   height: 36px;
+  border: 1px solid rgb(138, 231, 249);
   border-radius: 7px;
   position: relative;
   overflow: hidden;
+  transition: all 0.04s ease-in-out;
     box-shadow:
     0 0 0 2px rgba(0, 221, 255, 0.1),
     0 6px 8px rgba(0, 255, 255, 0.5);
+}
+
+.colorator-wrap:active {
+  box-shadow:
+    0 0 0 2px rgba(0, 221, 255, 0.2),
+    0 3px 5px rgba(0, 255, 255, 0.7);
+  transform: scale(0.94);
 }
 
 /* glow animé */

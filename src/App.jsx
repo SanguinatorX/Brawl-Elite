@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faGear, faComment, faAddressCard, faExclamationTriangle } from '@fortawesome/free-solid-svg-icons'
 
-import { bug, anbug, cass, ancass, rotate, unrotate, splatsh, unsplatsh, textSizer } from "./store.js";
+import { bug, anbug, cass, ancass, rotate, unrotate, splatsh, unsplatsh } from "./store.js";
 
 import Tubes from './animations/tubes.jsx';
 import Bulles from "./animations/bulles.jsx";
@@ -194,8 +194,12 @@ function ColorSplatshProvider (props) {
 function App(props) {
   const dispatch = useDispatch();
   const [presAnimation, modifPresAnimation] = useState(false);
+  
   const bugge = useSelector((state) => state.bugge);
   const casse = useSelector((state) => state.casse);
+
+  const textSize = useSelector((state) => state.textSize);
+  const textColor = useSelector((state) => state.textColor);
 
   if (!bugge) {
     return <div id="appBugge"></div>;
@@ -205,7 +209,7 @@ function App(props) {
   }
 
   return (
-    <div id="app" style={{ fontSize: useSelector((state) => state.textSize) + "px" }}>
+    <div id="app" style={{ fontSize: textSize + "px", color: textColor }}>
       <Rotateprovider>
         <ColorSplatshProvider>
           <Header />

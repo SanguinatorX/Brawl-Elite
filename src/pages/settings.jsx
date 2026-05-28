@@ -3,15 +3,17 @@ import { useRef } from "react";
 import { Link } from "react-router-dom";
 
 import { useDispatch, useSelector } from "react-redux";
-import { textSizer } from "/src/store.js";
+import { textSizer, textColorer } from "/src/store.js";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faRightFromBracket, faGear } from '@fortawesome/free-solid-svg-icons'
 
 function Settings () {
   const textSize = useSelector((state) => state.textSize);
+  const textColor = useSelector((state) => state.textColor);
   const dispatch = useDispatch();
   const rangeRef = useRef(null);
+  const coloratorRef = useRef(null);
 
   return (
     <div id="settingsPage">
@@ -22,7 +24,7 @@ function Settings () {
           <legend>Taille</legend>
           <label htmlFor="textSize">Taille du texte :</label>
           <br />
-          <input type="range" min="8" max="25" id="textSize" className="slider" ref={rangeRef}
+          <input type="range" min="8" max="25" id="textSize" defaultValue={textSize} className="slider" ref={rangeRef}
           />
         </fieldset>
         <hr width="100%" />
@@ -31,7 +33,7 @@ function Settings () {
           <label htmlFor="textColor">Couleur du texte :</label>
           <br />
           <div className="colorator-wrap">
-            <input type="color" id="textColor" className="colorator" />
+            <input type="color" id="textColor" defaultValue={textColor} className="colorator" ref={coloratorRef} />
           </div>
         </fieldset>
         <hr width="100%" />
@@ -48,7 +50,10 @@ function Settings () {
         </fieldset>
         <hr width="100%" />
         <fieldset>
-          <input type="submit" value="Enregistrer les modifications" className="submitBtn" onClick={() => dispatch(textSizer(rangeRef.current.value))} />
+          <input type="submit" value="Enregistrer les modifications" className="submitBtn" onClick={() => {
+            dispatch(textSizer(number(rangeRef.current.value)));
+            dispatch(textColorer(coloratorRef.current.value));
+          }} />
         </fieldset>
       </form>
     </div>
