@@ -12,7 +12,7 @@ function Settings () {
   const dispatch = useDispatch();
 
   return (
-    <div className="modalOverlay">
+    <div id="settingsPage">
       <form className="modalBox" onSubmit={(e) => e.preventDefault()}>
         <Link to="/" className="closeBtn"><FontAwesomeIcon icon={faRightFromBracket} /></Link>
         <h1><FontAwesomeIcon icon={faGear} /> Settings</h1>
