@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faGear, faComment, faAddressCard, faExclamationTriangle } from '@fortawesome/free-solid-svg-icons'
 
-import { bug, anbug, cass, ancass, rotate, unrotate, splatsh, unsplatsh } from "./store.js";
+import { bug, anbug, cass, ancass, rotate, unrotate, splatsh, unsplatsh, textSizer } from "./store.js";
 
 import Tubes from './animations/tubes.jsx';
 import Bulles from "./animations/bulles.jsx";
@@ -74,7 +74,9 @@ function Description(props) {
         de partenariat📝. On espère vous voir très bientôt ❤
         <br />
         <br />
-        <Link to="https://discord.gg/ydkvqF6Gbc">Rejoindre Brawl d'Elite</Link>
+        <a href="https://discord.gg/ydkvqF6Gbc" target="_blank" rel="noopener noreferrer">
+          Rejoindre Brawl d'Elite
+        </a>
       </p>
     </section>
   );
@@ -84,9 +86,9 @@ function Widget(props) {
   return (
     <article>
       <iframe
+        title="Discord Widget"
         src="https://discord.com/widget?id=1297945538679017472&theme=dark"
         style={{ width: "100%", height: "400px", border: "none" }}
-        allowtransparency="true"
         sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
       ></iframe>
     </article>
@@ -190,6 +192,7 @@ function ColorSplatshProvider (props) {
 }
 
 function App(props) {
+  const dispatch = useDispatch();
   const [presAnimation, modifPresAnimation] = useState(false);
   const bugge = useSelector((state) => state.bugge);
   const casse = useSelector((state) => state.casse);
@@ -202,7 +205,7 @@ function App(props) {
   }
 
   return (
-    <div id="app">
+    <div id="app" style={{ fontSize: useSelector((state) => state.textSize) + "px" }}>
       <Rotateprovider>
         <ColorSplatshProvider>
           <Header />

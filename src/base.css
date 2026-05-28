@@ -27,6 +27,7 @@
     font-family: 'Work Sans';
     background: radial-gradient(circle at top, #1e293b, #020617);
     color: #e2e8f0;
+    font-size: 16px;
     margin: 0;
     padding: 0;
     line-height: 1.3;
@@ -72,6 +73,16 @@
 
   input {
     margin: 15px 0;
+  }
+
+  fieldset {
+    border: none;
+    min-width: 0;
+  }
+
+  legend {
+    padding: 0;
+    margin: 0;
   }
 
   @media (max-width: 900px) {

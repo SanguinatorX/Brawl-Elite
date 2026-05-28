@@ -472,6 +472,92 @@ aside ul li:hover {
   background: transparent;
 }
 
+fieldset {
+  margin: 24px 0;
+}
+
+legend {
+  padding: 4px 12px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+
+  color: #ffcc00;
+  border: 1px solid rgba(255, 204, 0, 0.25);
+  border-radius: 500px;
+  background: rgba(255, 204, 0, 0.08);
+  backdrop-filter: blur(8px);
+
+  box-shadow:
+    inset 0 0 12px rgba(255, 204, 0, 0.08),
+    0 0 10px rgba(255, 204, 0, 0.08);
+}
+
+.colorator {
+  width: 60px;
+  height: 40px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+
+  border-radius: 10px;
+  overflow: hidden;
+
+  box-shadow:
+    0 0 0 2px rgba(255,255,255,0.1),
+    0 8px 20px rgba(0,0,0,0.5);
+
+  transition: transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+.colorator:hover {
+  transform: scale(1.05);
+  box-shadow:
+    0 0 0 2px rgba(255,204,0,0.4),
+    0 10px 25px rgba(0,0,0,0.7);
+}
+
+.colorator::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+.colorator::-webkit-color-swatch {
+  border: none;
+  border-radius: 8px;
+}
+
+.colorator::-moz-color-swatch {
+  border: none;
+  border-radius: 8px;
+}
+
+input[type="submit"] {
+  cursor: pointer;
+  padding: 7px 14px;
+  margin: 4px;
+  border-radius: 6px;
+  border: none;
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+input[type="submit"]:hover {
+  filter: brightness(1.1);
+  transform: translateY(-2px);
+  transform: scale(1.05);
+}
+
+input[type="submit"]:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+}
+
 .footer-text {
   position: fixed;
   bottom: 0px;
