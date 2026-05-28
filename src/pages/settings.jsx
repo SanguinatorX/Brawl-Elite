@@ -24,12 +24,16 @@ function Settings () {
             onChange={(e) => dispatch(textSizer(e.target.value))} value={textSize}
           />
         </fieldset>
+        <hr width="100%" />
         <fieldset>
           <legend>Couleur</legend>
           <label htmlFor="textColor">Couleur du texte :</label>
           <br />
-          <input type="color" id="textColor" className="colorator" />
+          <div className="colorator-wrap">
+            <input type="color" id="textColor" className="colorator" />
+          </div>
         </fieldset>
+        <hr width="100%" />
         <fieldset>
           <legend>Thème</legend>
           <label htmlFor="theme">Thème du site :</label>
@@ -41,6 +45,7 @@ function Settings () {
             <option value="green">Vert</option>
           </select>
         </fieldset>
+        <hr width="100%" />
         <fieldset>
           <input type="submit" value="Enregistrer les modifications" className="submitBtn" />
         </fieldset>
