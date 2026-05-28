@@ -1,4 +1,5 @@
 import React from "react";
+import { useRef } from "react";
 import { Link } from "react-router-dom";
 
 import { useDispatch, useSelector } from "react-redux";
@@ -10,6 +11,7 @@ import { faRightFromBracket, faGear } from '@fortawesome/free-solid-svg-icons'
 function Settings () {
   const textSize = useSelector((state) => state.textSize);
   const dispatch = useDispatch();
+  const rangeRef = useRef(null);
 
   return (
     <div id="settingsPage">
@@ -20,8 +22,7 @@ function Settings () {
           <legend>Taille</legend>
           <label htmlFor="textSize">Taille du texte :</label>
           <br />
-          <input type="range" min="8" max="25" id="textSize" className="slider"
-            onChange={(e) => dispatch(textSizer(e.target.value))} value={textSize}
+          <input type="range" min="8" max="25" id="textSize" className="slider" ref={rangeRef}
           />
         </fieldset>
         <hr width="100%" />
@@ -47,7 +48,7 @@ function Settings () {
         </fieldset>
         <hr width="100%" />
         <fieldset>
-          <input type="submit" value="Enregistrer les modifications" className="submitBtn" />
+          <input type="submit" value="Enregistrer les modifications" className="submitBtn" onClick={() => dispatch(textSizer(rangeRef.current.value))} />
         </fieldset>
       </form>
     </div>
