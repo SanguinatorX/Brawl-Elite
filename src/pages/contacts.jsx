@@ -26,53 +26,57 @@ function Contacts () {
       <h1><FontAwesomeIcon icon={faAddressCard} /> Contacts</h1>
       <p>Ici les contacts du staff de <cite>Brawl Elite</cite>, présentés sous leurs pseudos <abbr title="Discord app">Discord</abbr>.
       Vous pouvez les contacter pour toute question, suggestion ou partenariat !</p>
-      {contacts.map((contact, index) => (
-        <details key={index}>
-          <summary>Contacts pour : {contact.discord}</summary>
-          <ul>
-            <li>
-              E-mail :{" "}
-              {contact.email ? (
-                <span className="contact-info">{contact.email}</span>
-              ) : (
-                <span className="no-infos">Pas d'informations spécifiées</span>
-              )}
-            </li>
-            <li>
-              Instagram :{" "}
-              {contact.instagram ? (
-                <span className="contact-info">{contact.instagram}</span>
-              ) : (
-                <span className="no-infos">Pas d'informations spécifiées</span>
-              )}
-            </li>
-            <li>
-              Twitter :{" "}
-              {contact.twitter ? (
-                <span className="contact-info">{contact.twitter}</span>
-              ) : (
-                <span className="no-infos">Pas d'informations spécifiées</span>
-              )}
-            </li>
-            <li>
-              YouTube :{" "}
-              {contact.youtube ? (
-                <span className="contact-info">{contact.youtube}</span>
-              ) : (
-                <span className="no-infos">Pas d'informations spécifiées</span>
-              )}
-            </li>
-            <li>
-              TikTok :{" "}
-              {contact.tiktok ? (
-                <span className="contact-info">{contact.tiktok}</span>
-              ) : (
-                <span className="no-infos">Pas d'informations spécifiées</span>
-              )}
-            </li>
-          </ul>
-        </details>
-      ))}
+      <ol>
+        {contacts.map((contact, index) => (
+          <li key={index}>
+            <details>
+              <summary>Contacts pour : {contact.discord}</summary>
+              <ul>
+                <li>
+                  E-mail :&nbsp;
+                  {contact.email ? (
+                    <span className="contact-info">{contact.email}</span>
+                  ) : (
+                    <span className="no-infos">Pas d'informations spécifiées</span>
+                  )}
+                </li>
+                <li>
+                  Instagram :&nbsp;
+                  {contact.instagram ? (
+                    <span className="contact-info">{contact.instagram}</span>
+                  ) : (
+                    <span className="no-infos">Pas d'informations spécifiées</span>
+                  )}
+                </li>
+                <li>
+                  Twitter :&nbsp;
+                  {contact.twitter ? (
+                    <span className="contact-info">{contact.twitter}</span>
+                  ) : (
+                    <span className="no-infos">Pas d'informations spécifiées</span>
+                  )}
+                </li>
+                <li>
+                  YouTube :&nbsp;
+                  {contact.youtube ? (
+                    <span className="contact-info">{contact.youtube}</span>
+                  ) : (
+                    <span className="no-infos">Pas d'informations spécifiées</span>
+                  )}
+                </li>
+                <li>
+                  TikTok :&nbsp;
+                  {contact.tiktok ? (
+                    <span className="contact-info">{contact.tiktok}</span>
+                  ) : (
+                    <span className="no-infos">Pas d'informations spécifiées</span>
+                  )}
+                </li>
+              </ul>
+            </details>
+          </li>
+        ))}
+      </ol>
     </div>
   );
 };

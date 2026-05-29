@@ -31,8 +31,7 @@ function LateralMenu (props) {
   const [menuAffichage, modifMenuAffichage] = useState(false);
 
   return (
-    <>
-      {/* Bouton d'ouverture */}
+    <nav>
       <button id="burgerButton" onClick={() => modifMenuAffichage(!menuAffichage)}>
       <FontAwesomeIcon icon={faBars} /> {/* Icône du menu burger 🍔 */}
       </button>
@@ -47,7 +46,7 @@ function LateralMenu (props) {
           <li>Actu hebdo</li>
         </ul>
       </aside>
-    </>
+    </nav>
   );
 }
 

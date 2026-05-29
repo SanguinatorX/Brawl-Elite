@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { GoHome } from "/src/globalCompos.jsx";
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faAddressCard } from '@fortawesome/free-solid-svg-icons'
+
 function Profile() {
   const [tag, setTag] = useState("");
   const [profile, setProfile] = useState(null);
@@ -27,9 +30,9 @@ function Profile() {
   };
 
   return (
-    <div className="profile">
-      <div className="profileCard">
-        <h1>Profil Brawl Stars</h1>
+    <div id="profile">
+      <aside>
+        <h1><FontAwesomeIcon icon={faAddressCard} /> Profil Brawl Stars</h1>
         <p className="sous-titre">Entre ton tag et vois tes stats</p>
         <p className="sous-titre">Qu'est-ce qu'un tag ? <a href="https://discord.gg/3aBCbsgc5Z" target="_blank">Rejoins le serveur</a> pour poser la question aux membres !</p>
         <input
@@ -40,7 +43,7 @@ function Profile() {
         <button onClick={getPlayer}>Rechercher le joueur</button>
 
         {error ? <p className="error">{error}</p> : null}
-      </div>
+      </aside>
       {profile ? (
         <div className="profileResult">
             <h2 style={{ color: profile.nameColor }}>
