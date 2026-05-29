@@ -3,17 +3,21 @@ import { useRef } from "react";
 import { Link } from "react-router-dom";
 
 import { useDispatch, useSelector } from "react-redux";
-import { textSizer, textColorer } from "/src/store.js";
+import { textSizer, textColorer, themeChanger } from "/src/store.js";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faRightFromBracket, faGear } from '@fortawesome/free-solid-svg-icons'
 
 function Settings () {
+  const dispatch = useDispatch();
+
   const textSize = useSelector((state) => state.textSize);
   const textColor = useSelector((state) => state.textColor);
-  const dispatch = useDispatch();
+  const theme = useSelector((state) => state.theme);
+
   const rangeRef = useRef(null);
   const coloratorRef = useRef(null);
+  const themeRef = useRef(null);
 
   return (
     <div id="settingsPage">
@@ -24,7 +28,7 @@ function Settings () {
           <legend>Taille</legend>
           <label htmlFor="textSize">Taille du texte :</label>
           <br />
-          <input type="range" min="8" max="25" id="textSize" className="slider" defaultValue={textSize} ref={rangeRef}
+          <input type="range" min="8" max="25" id="textSize" defaultValue={textSize} className="slider" ref={rangeRef}
           />
         </fieldset>
         <hr width="100%" />
@@ -41,10 +45,10 @@ function Settings () {
           <legend>Thème</legend>
           <label htmlFor="theme">Thème du site :</label>
           <br />
-          <select id="theme" className="selector">
+          <select id="theme" defaultValue={theme} className="selector" ref={themeRef}>
+            <option defaultChecked={true} value="standard">Standard</option>
             <option value="light">Clair</option>
-            <option value="dark">Sombre</option>
-            <option value="blue">Bleu</option>
+            <option value="red">Rouge</option>
             <option value="green">Vert</option>
           </select>
         </fieldset>
@@ -53,6 +57,7 @@ function Settings () {
           <input type="submit" value="Enregistrer les modifications" className="submitBtn" onClick={() => {
             dispatch(textSizer(Number(rangeRef.current.value)));
             dispatch(textColorer(coloratorRef.current.value));
+            dispatch(themeChanger(themeRef.current.value));
           }} />
         </fieldset>
       </form>

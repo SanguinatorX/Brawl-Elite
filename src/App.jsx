@@ -199,6 +199,7 @@ function App(props) {
 
   const textSize = useSelector((state) => state.textSize);
   const textColor = useSelector((state) => state.textColor);
+  const theme = useSelector((state) => state.theme);
 
   if (!bugge) {
     return <div id="appBugge"></div>;
@@ -208,7 +209,7 @@ function App(props) {
   }
 
   return (
-    <div id="app" style={{ fontSize: textSize + "px", color: textColor }}>
+    <div id="app" className={theme} style={{ fontSize: textSize + "px", color: textColor }}>
       <Rotateprovider>
         <ColorSplatshProvider>
           <Header />

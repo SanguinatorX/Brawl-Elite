@@ -72,12 +72,23 @@ const textColorSlice = createSlice({
   }
 })
 
+const themeSlice = createSlice({
+  name: "themeSlice",
+  initialState: "standart",
+  reducers: {
+    themeChanger: (prevState, action) => {
+      return action.payload;
+    }
+  }
+});
+
 export const { bug, anbug } = buggeurSlice.actions;
 export const { cass, ancass } = casseurSlice.actions;
 export const { rotate, unrotate } = rotateurSlice.actions;
 export const { splatsh, unsplatsh } = colorSplatshSlice.actions;
 export const { textSizer }  = textSizeSlice.actions;
 export const { textColorer } = textColorSlice.actions;
+export const { themeChanger } = themeSlice.actions;
 
 export const store = configureStore({
   reducer: {
@@ -87,5 +98,6 @@ export const store = configureStore({
     splatshing: colorSplatshSlice.reducer,
     textSize: textSizeSlice.reducer,
     textColor: textColorSlice.reducer,
+    theme: themeSlice.reducer,
   },
 });
