@@ -95,6 +95,21 @@ function Widget(props) {
 }
 
 function Modos(props) {
+  const [contacts, setContacts] = useState([]);
+  
+  useEffect(() => {
+    async function fetchContacts() {
+      try {
+        const response = await fetch("/contacts.json");
+        const data = await response.json();
+        setContacts(data);
+      } catch (error) {
+        console.error("Erreur lors du chargement des contacts :", error);
+      }  
+    }
+    fetchContacts();
+  }, []);
+
   return (
     <section>
       <h3>
@@ -102,24 +117,9 @@ function Modos(props) {
         à vous aider !
       </h3>
       <ul>
-        <strong>ADMIN :</strong>
-        <li>Prince elite</li>
-        <strong>BRAS DROIT :</strong>
-        <li>Cupckake</li>
-        <strong>CO-ADMIN :</strong>
-        <li>Gryf</li>
-        <li>L4fty</li>
-        <strong>CHEF STAFF :</strong>
-        <li>Yuki 2.0</li>
-        <li>NoeLPZ</li>
-        <strong>PERMISSIONS BANNISSEMENTS :</strong>
-        <li>Juan Canard 2.0</li>
-        <li>Xemiosthegoat</li>
-        <li>Lulelo57</li>
-        <strong>MODO :</strong>
-        <li>Tristan</li>
-        <strong>MODO.JR :</strong>
-        <li>Nox</li>
+        {contacts.map((contact, index) => (
+          <li key={index}>{contact.discord}</li>
+        ))}
       </ul>
     </section>
   );
