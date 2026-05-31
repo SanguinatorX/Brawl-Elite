@@ -74,7 +74,7 @@ const textColorSlice = createSlice({
 
 const themeSlice = createSlice({
   name: "themeSlice",
-  initialState: "standart",
+  initialState: "standardTheme",
   reducers: {
     themeChanger: (prevState, action) => {
       return action.payload;
