@@ -1,3 +1,13 @@
+:root {
+  --standardThemeColor: #ffcc00;
+  --standardThemeColorSection: linear-gradient(
+    135deg,
+    rgba(255, 204, 0, 0.363),
+    rgba(255, 204, 0, 0.196)
+  );
+  --standardThemeBG: radial-gradient(circle at top, #1e293b, #020617);;
+}
+
 header {
   margin: 30px 110px;
   padding: 16px 20px;
@@ -11,7 +21,7 @@ header {
   background: rgba(255, 204, 0, 0.18);
   backdrop-filter: blur(10px);
 
-  color: #ffcc00;
+  color: var(--standardThemeColor);
   border: 1px solid rgba(255, 204, 0, 0.35);
   box-shadow: 0 8px 30px rgba(0,0,0,0.5);
 }
@@ -46,11 +56,7 @@ main section {
   width: 27%;
   padding: 18px;
   border-radius: 16px;
-  background: linear-gradient(
-    135deg,
-    rgba(255, 204, 0, 0.363),
-    rgba(255, 204, 0, 0.196)
-  );
+  background: var(--standardThemeColorSection);
 
   backdrop-filter: blur(10px);
   color: #fff8db;
@@ -66,12 +72,7 @@ main section {
 main section:hover {
   transform: translateY(-6px) scale(1.02);
 
-  background: linear-gradient(
-    135deg,
-    rgba(255, 204, 0, 0.363),
-    rgba(255, 204, 0, 0.196)
-  );
-
+  background: var(--standardThemeColorSection);
   box-shadow: 
     0 12px 35px rgba(0,0,0,0.8),
     0 0 20px rgba(255, 204, 0, 0.25);
@@ -137,7 +138,7 @@ button.deroulator:active {
 }
 
 #app .tubes, #app .bulles, #app .sparkler, #app .spheres {
-  background: #b18d00;
+  background: var(--standardThemeColorSection);
   min-width: 24%;
   border-radius: 4px;
   box-shadow: 9px 7px 6px rgba(0,0,0,0.7);
@@ -404,7 +405,7 @@ aside ul li:hover {
     right: 10px;
     z-index: 9999;
     font-size: 36px;
-    background: rgba(0,0,0,0.4);
+    background: rgba(0,0,0,0);
     padding: 10px;
     border-radius: 12px;
     backdrop-filter: blur(6px);
@@ -457,7 +458,7 @@ legend {
   text-transform: uppercase;
   letter-spacing: 1.5px;
 
-  color: #ffcc00;
+  color: var(--standardThemeColor);
   border: 1px solid rgba(255, 204, 0, 0.25);
   border-radius: 500px;
   background: rgba(255, 204, 0, 0.08);
@@ -620,7 +621,7 @@ select::picker-icon {
   padding: 24px;
 
   color: #eaf0ff;
-  background: radial-gradient(circle at top, #1a1f3c, #0b1020);
+  background: var(--standardThemeBG);
 }
 
 #contactsPage h1 {
@@ -683,7 +684,7 @@ select::picker-icon {
     max-width: 900px;
     margin: 40px auto;
     padding: 30px;
-    background: #111827;
+    background: var(--standardThemeBG);
     border: 2px solid #00d4ff;
     border-radius: 16px;
     box-shadow: 0 0 20px rgba(0, 212, 255, 0.25);
@@ -737,7 +738,7 @@ select::picker-icon {
 }
 
 #feedback-form {
-    background: #0f172a;
+    background: var(--standardThemeBG);
     border: 1px solid #334155;
     border-radius: 12px;
     overflow: hidden;
