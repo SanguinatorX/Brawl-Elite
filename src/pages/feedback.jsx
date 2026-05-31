@@ -12,11 +12,13 @@ export default function Feedback(props) {
         <p>
           Nous aimerions connaître votre avis sur notre site ! Merci de répondre au formulaire ci-dessous.
           Ainsi, vous nous aideriez beaucoup à améliorer notre site et à mieux répondre à vos besoins.
-          Nous apprécions votre temps et votre contribution !
+          Nous apprécions votre temps et votre contribution !<br />
+          Les réponses sont anonymes et ne seront utilisées que pour améliorer le site.
         </p>
         <div id="feedback-form">
-          <iframe src=""></iframe>
+          <iframe src="" title="Formulaire de feedback"></iframe>
         </div>
+        <p className="feedback-thanks">Merci pour votre aide ❤️</p>
       </div>
     );
 }
