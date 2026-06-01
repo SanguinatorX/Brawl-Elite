@@ -32,7 +32,6 @@ function Settings () {
           <input type="range" min="8" max="25" id="textSize" defaultValue={textSize} className="slider" ref={rangeRef}
           />
         </fieldset>
-        <hr width="100%" />
         <fieldset>
           <legend>Couleur</legend>
           <label htmlFor="textColor">Couleur du texte :</label>
@@ -41,7 +40,6 @@ function Settings () {
             <input type="color" id="textColor" defaultValue={textColor} className="colorator" ref={coloratorRef} />
           </div>
         </fieldset>
-        <hr width="100%" />
         <fieldset>
           <legend>Thème</legend>
           <label htmlFor="theme">Thème du site :</label>
@@ -53,8 +51,9 @@ function Settings () {
             <option value="greenTheme">Végétal 🌳</option>
           </select>
         </fieldset>
-        <hr width="100%" />
-        <fieldset>
+        <fieldset> 
+          {/* Le dernier fielset n'est pas stylisé car c'est un bouton de type submit.
+          Toujours le mettre en dernier car présence de sélecteur de type :not(:last-child) */}
           <input type="submit" value="Enregistrer les modifications" className="submitBtn" onClick={() => {
             dispatch(textSizer(Number(rangeRef.current.value)));
             dispatch(textColorer(coloratorRef.current.value));

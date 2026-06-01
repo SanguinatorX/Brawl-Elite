@@ -487,8 +487,34 @@ form.modalBox {
   text-decoration: none;
 }
 
-fieldset {
-  margin: 18px 0;
+fieldset:not(:last-child) {
+  margin: 11px 0;
+  padding: 7px 14px;
+
+  border: 1px solid rgba(var(--themeColorRGB), 0.4);
+  border-radius: 14px;
+
+  background: rgba(var(--themeColorRGB), 0.05);
+  backdrop-filter: blur(10px);
+
+  box-shadow:
+    0 0 12px rgba(var(--themeColorRGB), 0.2),
+    inset 0 0 12px rgba(var(--themeColorRGB), 0.08);
+
+  transition: all .2s ease;
+}
+
+fieldset:not(:last-child):hover {
+  border-color: rgba(var(--themeColorRGB), 0.7);
+
+  box-shadow:
+    0 0 18px rgba(var(--themeColorRGB), 0.35),
+    inset 0 0 16px rgba(var(--themeColorRGB), 0.12);
+}
+
+fieldset:last-child {
+  text-align: center;
+  margin-top: 4px;
 }
 
 legend {
@@ -507,13 +533,6 @@ legend {
   box-shadow:
     inset 0 0 12px rgba(var(--themeColorRGB), 0.08),
     0 0 10px rgba(var(--themeColorRGB), 0.08);
-}
-
-#settingsPage hr {
-  border: none;
-  height: 1px;
-  width: 100%;
-  background: rgba(8, 109, 122, 0.34);
 }
 
 .slider {
@@ -614,12 +633,16 @@ legend {
   border: none;
 }
 
-/* Étape 1 — opt-in obligatoire */
+/* Opt-in obligatoire */
 select {
   appearance: base-select;
+
+  border: 1px dashed rgba(var(--themeColorRGB), 0.4);
   margin: 10px 0;
-  width: 120px;
+  width: 40%;
   height: 30px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
 }
 
 select:hover {
