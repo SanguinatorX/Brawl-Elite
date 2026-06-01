@@ -1,6 +1,6 @@
 import React from "react";
 import { useRef } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import { useDispatch, useSelector } from "react-redux";
 import { textSizer, textColorer, themeChanger } from "/src/store.js";
@@ -10,6 +10,7 @@ import { faRightFromBracket, faGear } from '@fortawesome/free-solid-svg-icons'
 
 function Settings () {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const textSize = useSelector((state) => state.textSize);
   const textColor = useSelector((state) => state.textColor);
@@ -58,6 +59,7 @@ function Settings () {
             dispatch(textSizer(Number(rangeRef.current.value)));
             dispatch(textColorer(coloratorRef.current.value));
             dispatch(themeChanger(themeRef.current.value));
+            navigate("/");
           }} />
         </fieldset>
       </form>
