@@ -1,15 +1,53 @@
-:root {
-  --standardThemeColor: #ffcc00;
-  --standardThemeColorSection: linear-gradient(
+.standardTheme {
+  --themeColorRGB: 255, 204, 0;
+  --themeColorSection: linear-gradient(
     135deg,
     rgba(255, 204, 0, 0.363),
     rgba(255, 204, 0, 0.196)
   );
-  --standardThemeBG: radial-gradient(circle at top, #1e293b, #020617);;
+  --themeBG: radial-gradient(circle at top, #1e293b, #020617);;
+}
+
+.lightTheme {
+  --themeColorRGB: 59, 130, 246;
+  --themeColorSection: linear-gradient(
+    135deg,
+    rgba(59, 130, 246, 0.25),
+    rgba(59, 130, 246, 0.10)
+  );
+  --themeBG: linear-gradient(to bottom, #f8fafc, #e2e8f0);
+}
+
+.redTheme {
+  --themeColorRGB: 239, 68, 68;
+  --themeColorSection: linear-gradient(
+    135deg,
+    rgba(239, 68, 68, 0.35),
+    rgba(127, 29, 29, 0.20)
+  );
+  --themeBG: radial-gradient(circle at top, #0b0b0b, #1a0000);
+}
+
+.greenTheme {
+  --themeColorRGB: 34, 197, 94;
+  --themeColorSection: linear-gradient(
+    135deg,
+    rgba(34, 197, 94, 0.30),
+    rgba(21, 128, 61, 0.18)
+  );
+  --themeBG: radial-gradient(circle at top, #052e16, #020617);
+}
+
+#app {
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  background: var(--themeBG);
+  color: rgb(var(--themeColorRGB));
 }
 
 header {
-  margin: 30px 110px;
+  margin: 0 100px 30px 110px;
   padding: 16px 20px;
   border-radius: 16px;
 
@@ -18,11 +56,11 @@ header {
   justify-content: center;
   gap: 30px;
 
-  background: rgba(255, 204, 0, 0.18);
+  background: rgba(var(--themeColorRGB), 0.18);
   backdrop-filter: blur(10px);
 
-  color: var(--standardThemeColor);
-  border: 1px solid rgba(255, 204, 0, 0.35);
+  color: rgb(var(--themeColorRGB));
+  border: 1px solid rgba(var(--themeColorRGB), 0.35);
   box-shadow: 0 8px 30px rgba(0,0,0,0.5);
 }
 
@@ -30,7 +68,7 @@ header::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at center, rgba(255,204,0,0.2), transparent);
+  background: radial-gradient(circle at center, rgba(var(--themeColorRGB), 0.2), transparent);
   pointer-events: none;
 }
 
@@ -56,15 +94,15 @@ main section {
   width: 27%;
   padding: 18px;
   border-radius: 16px;
-  background: var(--standardThemeColorSection);
+  background: var(--themeColorSection);
 
   backdrop-filter: blur(10px);
-  color: #fff8db;
-  border: 1px solid rgba(255, 204, 0, 0.25);
+  color: rgb(var(--themeColorRGB));
+  border: 1px solid rgba(var(--themeColorRGB), 0.25);
 
   box-shadow: 
     0 8px 25px rgba(0,0,0,0.6),
-    0 0 10px rgba(255, 204, 0, 0.1);
+    0 0 10px rgba(var(--themeColorRGB), 0.1);
 
   transition: all 0.2s ease;
 }
@@ -72,10 +110,10 @@ main section {
 main section:hover {
   transform: translateY(-6px) scale(1.02);
 
-  background: var(--standardThemeColorSection);
+  background: var(--themeColorSection);
   box-shadow: 
     0 12px 35px rgba(0,0,0,0.8),
-    0 0 20px rgba(255, 204, 0, 0.25);
+    0 0 20px rgba(var(--themeColorRGB), 0.25);
 }
 
 button:not(.deroulator), #settingsPage input[type="submit"] {
@@ -138,7 +176,7 @@ button.deroulator:active {
 }
 
 #app .tubes, #app .bulles, #app .sparkler, #app .spheres {
-  background: var(--standardThemeColorSection);
+  background: var(--themeColorSection);
   min-width: 24%;
   border-radius: 4px;
   box-shadow: 9px 7px 6px rgba(0,0,0,0.7);
@@ -199,8 +237,8 @@ aside.cache, aside.affiche {
   z-index: 99;
 
   font-size: 1.1em;
-  background: #0f172a;
-  color: white;
+  background: var(--themeBG);
+  color: rgb(var(--themeColorRGB));
   border: 1px solid black;
   border-right: 1px solid rgba(255,255,255,0.1);
 
@@ -251,7 +289,7 @@ aside ul li:hover {
   width: 380px;
   padding: 25px;
   border-radius: 18px;
-  background: rgba(230, 194, 15, 0.132);
+  background: var(--themeColorSection);
   border: 1px solid rgba(180, 163, 5, 0.427);
   backdrop-filter: blur(12px);
   box-shadow: 0 10px 30px rgba(0,0,0,0.6);
@@ -260,7 +298,7 @@ aside ul li:hover {
 
 #profile aside h1 {
   margin-bottom: 10px;
-  color: #ffcc00;
+  color: rgb(var(--themeColorRGB));
 }
 
 .sous-titre {
@@ -458,15 +496,15 @@ legend {
   text-transform: uppercase;
   letter-spacing: 1.5px;
 
-  color: var(--standardThemeColor);
-  border: 1px solid rgba(255, 204, 0, 0.25);
+  color: rgb(var(--themeColorRGB));
+  border: 1px solid rgba(var(--themeColorRGB), 0.25);
   border-radius: 500px;
-  background: rgba(255, 204, 0, 0.08);
+  background: rgba(var(--themeColorRGB), 0.08);
   backdrop-filter: blur(8px);
 
   box-shadow:
-    inset 0 0 12px rgba(255, 204, 0, 0.08),
-    0 0 10px rgba(255, 204, 0, 0.08);
+    inset 0 0 12px rgba(var(--themeColorRGB), 0.08),
+    0 0 10px rgba(var(--themeColorRGB), 0.08);
 }
 
 #settingsPage hr {
@@ -621,7 +659,8 @@ select::picker-icon {
   padding: 24px;
 
   color: #eaf0ff;
-  background: var(--standardThemeBG);
+  opacity: 0.8;
+  background: var(--themeBG);
 }
 
 #contactsPage h1 {
@@ -684,11 +723,11 @@ select::picker-icon {
     max-width: 900px;
     margin: 40px auto;
     padding: 30px;
-    background: var(--standardThemeBG);
-    border: 2px solid #00d4ff;
+    background: var(--themeBG);
+    border: 2px solid rgb(var(--themeColorRGB));
     border-radius: 16px;
-    box-shadow: 0 0 20px rgba(0, 212, 255, 0.25);
-    color: #e5e7eb;
+    box-shadow: 0 0 20px rgba(var(--themeColorRGB), 0.25);
+    color: rgb(var(--themeColorRGB));
     font-family: "Segoe UI", sans-serif;
 }
 
@@ -701,7 +740,7 @@ select::picker-icon {
     background: linear-gradient(
         90deg,
         transparent,
-        #00d4ff,
+        rgb(var(--themeColorRGB)),
         transparent
     );
 }
@@ -713,7 +752,7 @@ select::picker-icon {
     right: -100px;
     width: 250px;
     height: 250px;
-    background: rgba(0, 212, 255, 0.08);
+    background: rgba(var(--themeColorRGB), 0.08);
     border-radius: 50%;
     filter: blur(60px);
     pointer-events: none;
@@ -721,12 +760,12 @@ select::picker-icon {
 
 #feedback h1 {
     text-align: center;
-    color: #00d4ff;
+    color: rgb(var(--themeColorRGB));
     margin-bottom: 25px;
     font-size: 2rem;
     text-transform: uppercase;
     letter-spacing: 2px;
-    text-shadow: 0 0 8px rgba(0, 212, 255, 0.4);
+    text-shadow: 0 0 8px rgba(var(--themeColorRGB), 0.4);
 }
 
 #feedback p {
@@ -738,7 +777,7 @@ select::picker-icon {
 }
 
 #feedback-form {
-    background: var(--standardThemeBG);
+    background: var(--themeBG);
     border: 1px solid #334155;
     border-radius: 12px;
     overflow: hidden;
@@ -748,7 +787,7 @@ select::picker-icon {
 
 #feedback-form:hover {
     border-color: #00d4ff;
-    box-shadow: 0 0 15px rgba(0, 212, 255, 0.2);
+    box-shadow: 0 0 15px rgba(var(--themeColorRGB), 0.2);
 }
 
 #feedback-form iframe {

@@ -46,7 +46,7 @@ function Settings () {
           <label htmlFor="theme">Thème du site :</label>
           <br />
           <select id="theme" defaultValue={theme} className="selector" ref={themeRef}>
-            <option defaultChecked={true} value="standardTheme">Standard</option>
+            <option defaultChecked={true} value="standardTheme">Standard Elite 🔱</option>
             <option value="lightTheme">Clair</option>
             <option value="redTheme">Sanglant 🩸</option>
             <option value="greenTheme">Végétal 🌳</option>
