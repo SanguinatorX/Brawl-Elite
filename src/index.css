@@ -766,7 +766,7 @@ select:open::picker-icon {
     max-width: 900px;
     margin: 40px auto;
     padding: 10px;
-    background: var(--themeBG);
+    background: var(--themeColorSection);
     border: 2px solid rgb(var(--themeColorRGB));
     border-radius: 16px;
     box-shadow: 0 0 20px rgba(var(--themeColorRGB), 0.25);
