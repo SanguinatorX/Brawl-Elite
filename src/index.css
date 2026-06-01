@@ -722,12 +722,12 @@ select::picker-icon {
 #feedback {
     max-width: 900px;
     margin: 40px auto;
-    padding: 30px;
+    padding: 10px;
     background: var(--themeBG);
-    border: 2px solid rgb(var(--themeColorRGB));
+    border: 2px solid blue;
     border-radius: 16px;
-    box-shadow: 0 0 20px rgba(var(--themeColorRGB), 0.25);
-    color: rgb(var(--themeColorRGB));
+    box-shadow: 0 0 20px rgba(0, 0, 255, 0.25);
+    color: blue;
     font-family: "Segoe UI", sans-serif;
 }
 
@@ -740,7 +740,7 @@ select::picker-icon {
     background: linear-gradient(
         90deg,
         transparent,
-        rgb(var(--themeColorRGB)),
+        blue,
         transparent
     );
 }
@@ -752,7 +752,7 @@ select::picker-icon {
     right: -100px;
     width: 250px;
     height: 250px;
-    background: rgba(var(--themeColorRGB), 0.08);
+    background: rgba(0, 0, 255, 0.08);
     border-radius: 50%;
     filter: blur(60px);
     pointer-events: none;
@@ -760,12 +760,12 @@ select::picker-icon {
 
 #feedback h1 {
     text-align: center;
-    color: rgb(var(--themeColorRGB));
+    color: blue;
     margin-bottom: 25px;
     font-size: 2rem;
     text-transform: uppercase;
     letter-spacing: 2px;
-    text-shadow: 0 0 8px rgba(var(--themeColorRGB), 0.4);
+    text-shadow: 0 0 8px rgba(0, 0, 255, 0.4);
 }
 
 #feedback p {
