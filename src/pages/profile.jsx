@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { GoHome } from "/src/globalCompos.jsx";
+import { useSelector } from "react-redux";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAddressCard } from '@fortawesome/free-solid-svg-icons'
@@ -8,6 +9,7 @@ function Profile() {
   const [tag, setTag] = useState("");
   const [profile, setProfile] = useState(null);
   const [error, setError] = useState(null);
+  const theme = useSelector(state => state.theme);
 
   const getPlayer = () => {
     if (!tag) return;
@@ -30,7 +32,7 @@ function Profile() {
   };
 
   return (
-    <div id="profile">
+    <div id="profile" className={theme}>
       <aside>
         <h1><FontAwesomeIcon icon={faAddressCard} /> Profil Brawl Stars</h1>
         <p className="sous-titre">Entre ton tag et vois tes stats</p>

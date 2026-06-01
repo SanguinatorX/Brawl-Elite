@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { GoHome } from "/src/globalCompos.jsx";
+import { useSelector } from "react-redux";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAddressCard } from '@fortawesome/free-solid-svg-icons'
 
 function Contacts () {
+  const theme = useSelector(state => state.theme);
   const [contacts, setContacts] = useState([]);
 
   useEffect(() => {
@@ -21,7 +23,7 @@ function Contacts () {
   }, []);
 
   return (
-    <div id="contactsPage">
+    <div id="contactsPage" className={theme}>
       <GoHome />
       <h1><FontAwesomeIcon icon={faAddressCard} /> Contacts</h1>
       <p>Ici les contacts du staff de <cite>Brawl Elite</cite>, présentés sous leurs pseudos <abbr title="Discord app">Discord</abbr>.

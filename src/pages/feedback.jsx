@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 import { GoHome } from "/src/globalCompos.jsx";
+import { useSelector } from "react-redux";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faComment } from '@fortawesome/free-solid-svg-icons'
 
 export default function Feedback(props) {
+    const theme = useSelector(state => state.theme);
+
     return (
-      <div id="feedback">
+      <div id="feedback" className={theme}>
         <GoHome />
         <h1><FontAwesomeIcon icon={faComment} /> Feedback sur le site</h1>
         <p>

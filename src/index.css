@@ -281,6 +281,7 @@ aside ul li:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background: var(--themeBG);
   gap: 20px;
   padding: 40px;
 }
@@ -305,6 +306,7 @@ aside ul li:hover {
   font-size: 14px;
   opacity: 0.7;
   margin-bottom: 20px;
+  color: rgb(var(--themeColorRGB));
 }
 
 #profile aside input {
@@ -317,8 +319,8 @@ aside ul li:hover {
   text-align: left;
   font-size: 14px;
 
-  background: rgba(255, 255, 255, 0.05);
-  color: #e2e8f0;
+  background: rgba(var(--themeColorRGB), 0.05);
+  color: rgb(var(--themeColorRGB));
 
   transition: border 0.2s ease, background 0.2s ease;
 }
@@ -652,32 +654,32 @@ select::picker-icon {
 }
 
 #contactsPage {
-  border: 1px solid white;
+  border: 1px solid rgba(var(--themeColorRGB), 0.25);
   border-radius: 12px;
   max-width: 800px;
   margin: 15px auto;
   padding: 24px;
 
-  color: #eaf0ff;
+  color: rgb(var(--themeColorRGB));
   opacity: 0.8;
-  background: var(--themeBG);
+  background: var(--themeColorSection);
 }
 
 #contactsPage h1 {
   font-size: 2.3rem;
   margin-bottom: 8px;
-  color: #7c5cff;
-  text-shadow: 0 0 8px rgba(124, 92, 255, 0.4);
+  color: rgb(var(--themeColorRGB));
+  text-shadow: 0 0 7px rgba(var(--themeColorRGB), 0.4);
 }
 
 #contactsPage > p {
-  color: #b7c0ff;
+  color: rgba(var(--themeColorRGB), 0.8);
   margin-bottom: 22px;
 }
 
 #contactsPage details {
   background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(124, 92, 255, 0.3);
+  border: 1px solid rgba(var(--themeColorRGB), 0.3);
   border-radius: 14px;
   padding: 14px;
 
@@ -724,10 +726,10 @@ select::picker-icon {
     margin: 40px auto;
     padding: 10px;
     background: var(--themeBG);
-    border: 2px solid blue;
+    border: 2px solid rgb(var(--themeColorRGB));
     border-radius: 16px;
-    box-shadow: 0 0 20px rgba(0, 0, 255, 0.25);
-    color: blue;
+    box-shadow: 0 0 20px rgba(var(--themeColorRGB), 0.25);
+    color: rgb(var(--themeColorRGB));
     font-family: "Segoe UI", sans-serif;
 }
 
@@ -740,7 +742,7 @@ select::picker-icon {
     background: linear-gradient(
         90deg,
         transparent,
-        blue,
+        rgb(var(--themeColorRGB)),
         transparent
     );
 }
@@ -752,7 +754,7 @@ select::picker-icon {
     right: -100px;
     width: 250px;
     height: 250px;
-    background: rgba(0, 0, 255, 0.08);
+    background: rgba(var(--themeColorRGB), 0.08);
     border-radius: 50%;
     filter: blur(60px);
     pointer-events: none;
@@ -760,18 +762,18 @@ select::picker-icon {
 
 #feedback h1 {
     text-align: center;
-    color: blue;
+    color: rgb(var(--themeColorRGB));
     margin-bottom: 25px;
     font-size: 2rem;
     text-transform: uppercase;
     letter-spacing: 2px;
-    text-shadow: 0 0 8px rgba(0, 0, 255, 0.4);
+    text-shadow: 0 0 8px rgba(var(--themeColorRGB), 0.4);
 }
 
 #feedback p {
     text-align: center;
     font-size: 1.10em;
-    color: #cbd5e1;
+    color: rgb(var(--themeColorRGB));
     max-width: 750px;
     margin: 0 auto 30px;
 }
