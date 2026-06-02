@@ -90,12 +90,8 @@ header img:hover {
   transform: scale(1.1);
 }
 
-main div:first-child section:first-child {
-  width: 32%;
-}
-
 main section {
-  width: 27%;
+  width: 30%;
   padding: 18px;
   border-radius: 16px;
   background: var(--themeColorSection);
