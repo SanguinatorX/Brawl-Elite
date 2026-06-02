@@ -9,6 +9,7 @@ import { store } from './store.js';
 
 import "./base.css";
 import "./index.css";
+import "./responsive.css";
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>

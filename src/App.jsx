@@ -33,7 +33,7 @@ function LateralMenu (props) {
   return (
     <nav>
       <button id="burgerButton" onClick={() => modifMenuAffichage(!menuAffichage)}>
-      <FontAwesomeIcon icon={faBars} /> {/* Icône du menu burger 🍔 */}
+        <FontAwesomeIcon icon={faBars} /> {/* Icône du menu burger 🍔 */}
       </button>
       <aside className={menuAffichage ? "affiche" : "cache"}>
         <h2>Menu</h2>

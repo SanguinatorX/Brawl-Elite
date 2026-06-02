@@ -21,7 +21,7 @@ export default function Feedback(props) {
         <div id="feedback-form">
           <iframe src="" title="Formulaire de feedback"></iframe>
         </div>
-        <p className="feedback-thanks">Merci pour votre aide ❤️</p>
+        <p className="thanks">Merci pour votre aide ❤️</p>
       </div>
     );
 }

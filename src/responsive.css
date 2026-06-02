@@ -1,0 +1,68 @@
+
+/* Responsive */
+@media (max-width: 770px) {
+    header {
+        margin: 0 10px 20px 10px;
+        padding: 3px;
+        font-size: 12px;
+    }
+
+    main section {
+        min-width: 80%;
+        margin: 5px 0 16px 0;
+    }
+
+    #burgerButton {
+        font-size: 32px;
+    }
+
+    #settingsPage .closeBtn {
+        font-size: 42px;
+    }
+
+    #profile {
+        gap: 16px;
+    }
+
+    #profile aside {
+        max-width: 90%;
+        padding: 20px;
+    }
+
+    #profile .profileResult {
+        max-width: 96%;
+    }
+
+    #feedback {
+        margin: 20px;
+        padding: 20px 2px;
+        max-width: 90%;
+    }
+
+    #feedback h1 {
+        font-size: 1.7rem;
+    }
+
+    #feedback p {
+        font-size: 1rem;
+    }
+
+    #feedback-form iframe {
+        height: 650px;
+    }
+
+    #contactsPage {
+        max-width: 300px;
+        border-radius: 18px;
+    }
+    #contactsPage details {
+        padding: 10px;
+        width: 96%;
+        border-radius: 10px;
+    }
+
+    #contactsPage ol li {
+        list-style-position: outside;
+        padding-left: 10px;
+    }
+}

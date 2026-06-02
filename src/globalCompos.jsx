@@ -4,7 +4,7 @@ import { faHouse } from "@fortawesome/free-solid-svg-icons";
 
 function GoHome (props) {
     return (
-        <div className="globalCompos">
+        <div className="goHome">
             <Link to="/">
                 <FontAwesomeIcon
                     icon={faHouse}
