@@ -675,6 +675,9 @@ select:hover {
   border: 1px solid rgba(255, 255, 255, 0.2);
   filter: brightness(1.1);
 }
+select:active {
+  background: rgba(255, 255, 255, 0.5);
+}
 
 /* Dropdown */
 select::picker(select) {
